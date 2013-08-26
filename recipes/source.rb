@@ -21,6 +21,9 @@
 
 include_recipe "build-essential"
 include_recipe "git"
+include_recipe "x264::source"
+include_recipe "libvpx::source"
+
 
 ffmpeg_packages.each do |pkg|
   package pkg do
@@ -35,9 +38,6 @@ if node.platform_version.to_f >= 6.0
     returns [0,1]
   end
 end
-
-include_recipe "x264::source"
-include_recipe "libvpx::source"
 
 yasm_package = value_for_platform(
   [ "ubuntu" ] => { "default" => "yasm" },

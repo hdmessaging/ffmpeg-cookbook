@@ -85,11 +85,13 @@ module FFMPEG
       when "--enable-libvpx"
         value_for_platform(
           [ "ubuntu" ] => { "default" => [ "libvpx-dev" ] },
+          [ "centos" ] => { "default" => [ "libvpx-devel" ] },
           "default" => [ "libvpx-dev" ]
         )
       when "--enable-libx264"
         value_for_platform(
           [ "ubuntu" ] => { "default" => [ "libx264-dev" ] },
+          [ "centos" ] => { "default" => [ "x264-devel" ] },
           "default" => [ "libx264-dev" ]
         )
       else
