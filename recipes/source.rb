@@ -22,6 +22,14 @@
 include_recipe "build-essential"
 include_recipe "git"
 
+remote_file "install new repo" do
+  execute "wget http://packages.sw.be/rpmforge-release/rpmforge-release-0.5.2-2.el6.rf.x86_64.rpm" do
+  end
+  execute "rmp -Uvh pmforge-release-0.5.2-2.el6.rf.x86_64.rpm " do
+    returns [0,1]
+  end
+end
+
 ffmpeg_packages.each do |pkg|
   package pkg do
     action :purge

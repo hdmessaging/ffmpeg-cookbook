@@ -48,7 +48,9 @@ module FFMPEG
       case flag
       when "--enable-libfaac"
         value_for_platform(
-          "default" => [ "faac-devel" ]
+          [ "ubuntu" ] => { "default" => [ "libfaac-dev" ] },
+          ["centos"] => {"default" => ["faac-devel"]},
+          "default" => [ "libfaac-dev" ]
         )
       when "--enable-libmp3lame"
         value_for_platform(
