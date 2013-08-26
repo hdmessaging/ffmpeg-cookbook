@@ -24,6 +24,15 @@ include_recipe "git"
 include_recipe "x264::source"
 include_recipe "libvpx::source"
 
+bash "export_path" do
+  code <<-EOH
+    export LD_LIBRARY_PATH=/usr/local/lib/
+    echo /usr/local/lib > /etc/ld.so.conf.d/custom-libs.conf
+    echo /usr/local/lib > /etc/ld.so.conf
+    ldconfig
+  EOH
+end
+
 
 ffmpeg_packages.each do |pkg|
   package pkg do

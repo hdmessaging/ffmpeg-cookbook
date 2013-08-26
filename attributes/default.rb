@@ -35,7 +35,9 @@ default[:ffmpeg][:compile_flags] = [
   "--enable-libtheora",
   "--enable-libvorbis",
   "--enable-libvpx",
-  "--enable-libxvid"
+  "--enable-libxvid",
+  "--enable-shared",
+  "--extra-cflags=-fPIC"
 ]
 
 # JW 07-06-11: Hash of commit or a HEAD should be used - not a tag. Sync action of Git
