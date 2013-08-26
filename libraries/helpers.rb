@@ -49,32 +49,37 @@ module FFMPEG
       when "--enable-libfaac"
         value_for_platform(
           [ "ubuntu" ] => { "default" => [ "libfaac-dev" ] },
-          ["centos"] => {"default" => ["faac-devel"]},
+          [ "centos" ] => {"default" => ["faac-devel"]},
           "default" => [ "libfaac-dev" ]
         )
       when "--enable-libmp3lame"
         value_for_platform(
           [ "ubuntu" ] => { "default" => [ "libmp3lame-dev" ] },
+          [ "centos" ] => { "default" => [ "lame-devel" ] },
           "default" => [ "libmp3lame-dev" ]
         )
       when "--enable-libtheora"
         value_for_platform(
           [ "ubuntu" ] => { "default" => [ "libtheora-dev" ] },
+          [ "centos" ] => { "default" => [ "libtheora-devel" ] },
           "default" => [ "libtheora-dev" ]
         )
       when "--enable-libvorbis"
         value_for_platform(
           [ "ubuntu" ] => { "default" => [ "libvorbis-dev" ] },
+          [ "centos" ] => { "default" => [ "libvorbis-devel" ] },
           "default" => [ "libvorbis-dev" ]
         )
       when "--enable-libxvid"
         value_for_platform(
           [ "ubuntu" ] => { "default" => [ "libxvidcore-dev" ] },
+          ["centos"] => { "default" => ["xvidcore-devel"]},
           "default" => [ "libxvidcore-dev" ]
         )
       when "--enable-libfaad"
         value_for_platform(
           [ "ubuntu" ] => { "default" => [ "libfaad-dev" ] },
+          [ "centos" ] => { "default" => [ "faad2-devel" ] },
           "default" => [ "libfaad-dev" ]
         )
       when "--enable-libvpx"
